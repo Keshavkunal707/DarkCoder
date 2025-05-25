@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Product preview card component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .container {
+      height: 100vh;
+      width: 100%;
+      background-color: hsl(30, 38%, 92%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .elementBox {
+      height: 70%;
+      width: 60%;
+      background-color: hsl(0, 0%, 100%);
+      border-radius: 2vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .imageContainer {
+      height: 100%;
+      width: 50%;
+    }
+
+    .textContent {
+      height: 100%;
+      width: 50%;
+      padding: 5vh;
+      display: flex;
+      flex-direction: column;
+
+    }
+
+    #mainImg {
+      height: 100%;
+      width: 100%;
+      border-radius: 2vh 0 0 2vh;
+    }
+
+    #perfume {
+      font-family: "Montserrat", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 500;
+      font-style: normal;
+      color: hsl(158, 36%, 37%);
+    }
+
+    #perfumeName {
+      font-family: "Fraunces", serif;
+      font-optical-sizing: auto;
+      font-weight: 700;
+      font-style: normal;
+      font-variation-settings:
+        "SOFT" 0,
+        "WONK" 0;
+      margin: 3vh 0;
+    }
+
+    #paraOne {
+      font-size: 14px;
+      font-family: "Montserrat", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 500;
+      font-style: normal;
+      color: gray;
+    }
+
+    .priceCont {
+      width: 100%;
+      height: auto;
+      margin: 3vh 0;
+      font-family: "Fraunces", serif;
+      font-optical-sizing: auto;
+      font-weight: 700;
+      font-style: normal;
+      font-variation-settings:
+        "SOFT" 0,
+        "WONK" 0;
+      font-size: 3vh;
+      color: hsl(158, 36%, 37%);
+      display: flex;
+      flex-direction: row;
+    }
+    #smallTag{
+      font-family: "Montserrat", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 500;
+      font-style: normal;
+      color: gray;
+      font-size: 14px;
+      margin-left: 3vh;
+    }
+    #cartIcon{
+      color: #fff;
+      margin: 0 2vh;
+      
+    }
+    #addCart{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: none;
+      background-color: hsl(158, 36%, 37%);
+      color: #fff;
+      font-family: "Montserrat", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 500;
+      font-style: normal;
+      font-size: 3vh;
+      padding: 2vh 5vh;
+      width: 100%;
+      border-radius: 2vh;
+    }
+    #addCart:active{
+      background-color: hsl(158, 42%, 18%);
+    }
+    
+    @media only screen and (max-width: 660px) {
+        .elementBox{
+          height: 95vh;
+          width: 95%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          overflow: auto;
+        }
+        .imageContainer{
+          height: 40vh;
+          width: 100%;
+        }
+        .textContent{
+          height: 60%;
+          width: 100%;
+        }
+        #mainImg{
+          height: 100%;
+          width: 100%;
+          border-radius: 2vh 2vh 0 0;
+        }
+        
+    }
+    @media only screen and (max-width: 770px){
+      .elementBox{
+        height: 85%;
+        width: 95%;
+      }
+      .addCart{
+        font-size: 14px;
+      }
+      
+    }
+    @media only screen and (max-width: 1000px){
+      .elementBox{
+        height: 95%;
+        width: 95%;
+      }
+      
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="elementBox">
+      <div class="imageContainer">
+        <img src="image-product-desktop.jpg" id="mainImg">
+      </div>
+      <div class="textContent">
+        <h3 id="perfume">PERFUME</h3>
+        <h1 id="perfumeName">Gabrielle Essence Eau De Parfum</h1>
+        <p id="paraOne">A floral, solar and voluptuous interpretation composed by Olivier Polge, Perfumer-Creator for
+          the House of CHANEL.</p>
+        <div class="priceCont">
+          <h2 id="priceTag">$149.99</h2>
+          <h4 id="smallTag"><del>$169.99</del></h4>
+        </div>
+        <div class="btnCont">
+          <button id="addCart"><img src="icon-cart.svg" id="cartIcon"> Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
