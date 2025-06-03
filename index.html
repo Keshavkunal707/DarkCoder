@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+
+
+  <title>Keshav Kunal | Newsletter sign-up form with success message</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .container {
+      height: 100vh;
+      width: 100%;
+      background-color: hsl(234, 29%, 20%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .box {
+      height: 75%;
+      width: 65%;
+      background-color: #fff;
+      border-radius: 3vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      
+    }
+
+
+
+    .imgCont {
+      height: 100%;
+      width: 50%;
+      background-color: #fff;
+      padding: 3vh;
+      border-radius: 3vh;
+    }
+
+    .imgCont img {
+      height: 100%;
+      width: 100%;
+    }
+
+    .textContent {
+      height: 100%;
+      width: 60%;
+      padding-left: 6vh;
+      padding-top: 10vh;
+    }
+
+    .textContent h1 {
+      font-family: "Roboto", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 700;
+      font-style: normal;
+      font-variation-settings: "wdth" 100;
+      font-size: 5.7vh;
+      color: hsl(234, 29%, 20%);
+    }
+
+    .join {
+      font-family: "Roboto", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 400;
+      font-style: normal;
+      font-variation-settings: "wdth" 100;
+      font-size: 14px;
+      margin: 3vh 0;
+    }
+
+    .email {
+      font-family: "Roboto", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 700;
+      font-style: normal;
+      font-variation-settings: "wdth" 100;
+      color: hsl(234, 29%, 20%);
+      margin-top: 3vh;
+      margin-bottom: 1vh;
+    }
+
+    .center h4 {
+      font-size: 14px;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+    }
+
+    .boxCenter {
+      width: 100%;
+      display: flex;
+    }
+
+    .boxCenter img {
+      margin-right: 2vh;
+    }
+
+    .textContent input {
+      width: 100%;
+      height: auto;
+      padding: 0.7vh 3vh;
+      font-size: 4vh;
+      outline: none;
+      border-radius: 1vh;
+      border: 1px solid black;
+    }
+
+    .textContent input::placeholder {
+      font-size: 3vh;
+    }
+
+    .textContent button {
+      width: 100%;
+      height: auto;
+      font-size: 2.5vh;
+      color: #fff;
+      background-color: hsl(234, 29%, 20%);
+      border: none;
+      font-family: "Roboto", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 500;
+      font-style: normal;
+      font-variation-settings: "wdth" 100;
+      padding: 2vh 0;
+      border-radius: 1vh;
+      margin: 3vh 0;
+
+      
+      
+    }
+    .textContent button:hover{
+      background: linear-gradient(90deg,hsl(4, 100%, 67%), orange);
+    }
+
+    .boxCenter h4 {
+      font-family: "Roboto", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 400;
+      font-style: normal;
+      font-variation-settings: "wdth" 100;
+    }
+
+    .boxCenter {
+      margin: 2vh 0;
+    }
+    .emort{
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .error{
+      color: red;
+      font-family: "Roboto", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 700;
+      font-style: normal;
+      font-variation-settings: "wdth" 100;
+      margin-top: 3vh;
+      margin-bottom: 1vh;
+      display: none;
+    }
+    .secContainer{
+      height: 100vh;
+      width: 100%;
+      background-color: hsl(234, 29%, 20%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      display: none;
+    }
+    .secBox{
+      height: 60vh;
+      width: 60vh;
+      background-color: #fff;
+      border-radius: 4vh;
+      padding: 7vh;
+    }
+    .secBox img{
+      height: 7vh;
+      width: 7vh;
+    }
+    .secBox h1{
+      color: hsl(234, 29%, 20%);
+      font-family: "Roboto", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 700;
+      font-style: normal;
+      font-variation-settings: "wdth" 100;
+      font-size: 6vh;
+      margin: 2.5vh 0;
+    }
+    .secBox h5{
+      font-family: "Roboto", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 400;
+      font-style: normal;
+      font-variation-settings: "wdth" 100;
+      color: hsl(234, 29%, 20%);
+      font-size: 14px;
+    }
+    .secBox button{
+      width: 100%;
+      height: auto;
+      font-size: 2.7vh;
+      font-family: "Roboto", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 400;
+      font-style: normal;
+      font-variation-settings: "wdth" 100;
+      color: #fff;
+      background-color:  hsl(234, 29%, 20%);
+      padding: 1.5vh 3vh;
+      border: none;
+      border-radius: 1vh;
+      margin: 3vh 0;
+
+    }
+    .secBox button:hover{
+      background: linear-gradient(90deg,hsl(4, 100%, 67%), orange);
+    }
+    #Dismiss:active{
+      background-color: hsl(234, 30%, 13%);
+    }
+
+    @media only screen and (max-width: 375px){
+      .container{
+        overflow: auto;
+        background-color: #fff;
+
+      }
+      .container::-webkit-scrollbar{
+        display: none;
+      }
+      .box{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column-reverse;
+        border-radius: 0;
+      }
+      .imgCont{
+        width: 100%;
+        padding: 0;
+
+      }
+      .hell{
+        height: 40%;
+        width: 100%;
+        background-size: 100%;
+      }
+      .textContent{
+        width: 100%;
+        height: auto;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 3vh;
+      }
+      .textContent h1{
+        font-size: 5vh;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="box">
+      <div class="textContent">
+        <h1>Stay updated!</h1>
+        <h4 class="join">Join 60,000+ product managers receiving monthly updates on:</h4>
+        <div class="center">
+          <div class="boxCenter">
+            <img src="./assets/images/icon-list.svg" alt="tick">
+            <h4>Product discovery and building what matters</h4>
+          </div>
+          <div class="boxCenter">
+            <img src="./assets/images/icon-list.svg" alt="tick">
+            <h4>Measuring to ensure updates are a success</h4>
+          </div>
+          <div class="boxCenter">
+            <img src="./assets/images/icon-list.svg" alt="tick">
+            <h4>And much more!</h4>
+          </div>
+
+
+        </div>
+        <div class="emort">
+          <h5 class="email">Email address</h5>
+          <h5 class="error">Enter valid email</h5>
+        </div>
+        <input type="text" placeholder="email@company.com" id="inp">
+        <button id="btn"> Subscribe to monthly newsletter</button>
+      </div>
+      <div class="imgCont">
+        <img src="./assets/images/illustration-sign-up-desktop.svg" alt="bg-image" id="hell">
+      </div>
+    </div>
+    
+    </div>
+  </div>
+  <div class="secContainer">
+      <div class="secBox">
+        <img src="./assets/images/icon-success.svg" alt="hello" id="good">
+        <h1>Thanks for subscribing!</h1>
+        <h5> A confirmation email has been sent to <strong id="change">ash@loremcompany.com.</strong>
+  Please open it and click the button inside to confirm your subscription.</h5>
+          <button id="Dismiss">Dismiss message</button>
+      </div>
+  <!-- Sign-up form start -->
+
+  <!-- Stay updated!
+
+  Join 60,000+ product managers receiving monthly updates on:
+
+  Product discovery and building what matters
+  Measuring to ensure updates are a success
+  And much more!
+
+  Email address
+  email@company.com
+
+  Subscribe to monthly newsletter -->
+
+  <!-- Sign-up form end -->
+
+  <!-- Success message start -->
+
+  <!-- Thanks for subscribing!
+
+  A confirmation email has been sent to ash@loremcompany.com. 
+  Please open it and click the button inside to confirm your subscription.
+
+  Dismiss message -->
+
+
+</body>
+<script>
+  let btn = document.getElementById('btn')
+  let inp = document.getElementById('inp')
+  let invalid_text = document.querySelector('.error')
+  let secContainer = document.querySelector('.secContainer')
+  let container = document.querySelector('.container')
+  let change = document.getElementById('change')
+  let disBtn = document.getElementById('Dismiss')
+  let good = document.getElementById('good')
+
+
+
+  btn.addEventListener('click', (e)=>{
+    let sen = inp.value
+    let a = sen.substring(sen.length - 10)
+     
+    if (a == '@gmail.com'){
+      invalid_text.style.display = "none"
+      secContainer.style.display = "flex"
+      container.style.display = "none"
+      change.textContent = inp.value
+  
+
+      inp.value = ""
+      
+    }else{
+      invalid_text.style.display = "block"
+    }
+  })
+  good.addEventListener('click', (e)=>{
+    alert('Thankyou for subscribing')
+  })
+  disBtn.addEventListener('click', (e)=>{
+    secContainer.style.display = "none"
+    container.style.display = "flex"
+  })
+</script>
+</html>
